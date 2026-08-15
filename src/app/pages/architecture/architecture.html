@@ -1,0 +1,80 @@
+<section class="architecture-page">
+  <div class="architecture-header panel">
+    <span class="eyebrow">Architecture</span>
+    <h1>Front-end, back-end, database, hosting, and operations design</h1>
+  </div>
+
+  <div class="content-stack">
+    <section class="info-block panel">
+      <h2>Frontend Integration (Angular, React, &amp; Ext JS)</h2>
+
+      <ul>
+        <li>
+          <strong>Micro-frontends:</strong> Use a framework like <strong>Single-SPA</strong> or
+          <strong>Module Federation</strong> (Webpack 5 / Rspack) to load Angular, React, and Ext JS
+          components together in a single "shell" container application.
+        </li>
+        <li>
+          <strong>Shared State &amp; Communications:</strong> Connect the frameworks using
+          <strong>Custom Browser Events</strong> (Window Event Listeners) or a global state manager if
+          they need to pass data to each other in real-time.
+        </li>
+        <li>
+          <strong>Component Usage:</strong>
+          <ul class="nested-list">
+            <li><strong>Angular:</strong> Use for the main core platform or complex enterprise forms and dashboards.</li>
+            <li><strong>React:</strong> Use for high-interaction, lightweight, or highly dynamic features (like chat, feeds, or interactive widgets).</li>
+            <li><strong>Ext JS:</strong> Use for heavy, legacy data grids, complex analytical charts, or internal back-office administration tools.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="info-block panel">
+      <h2>Backend Architecture (Spring Boot)</h2>
+
+      <ul>
+        <li>Use Clean Architecture or Hexagonal Architecture principles to isolate business rules from external frameworks.</li>
+        <li>Implement a <strong>Layered Design</strong> consisting of <strong>Controllers</strong> (REST endpoints), <strong>Services</strong> (business logic), and <strong>Repositories</strong> (data access).</li>
+        <li>Apply the <strong>DTO Pattern</strong> (Data Transfer Objects) to abstract your database models and avoid exposing your entities directly to the client.</li>
+        <li>Leverage <strong>Spring Data JPA</strong> for relational queries and <strong>Spring Data MongoDB/Redis</strong> for your non-relational data needs.</li>
+      </ul>
+    </section>
+
+    <section class="info-block panel">
+      <h2>Database Architecture (Polyglot Persistence)</h2>
+
+      <ul>
+        <li>Use your <strong>Relational Database</strong> (e.g., PostgreSQL, MySQL) for structured data that requires strict ACID transactions, like user accounts and financial data.</li>
+        <li>Use your <strong>Non-Relational Database</strong> (e.g., MongoDB, Redis, DynamoDB) for unstructured data, dynamic catalogs, real-time logging, or caching.</li>
+        <li>Apply the <strong>CQRS Pattern</strong> (Command Query Responsibility Segregation) if you need to optimize high-performance read models on NoSQL while writing to a relational store.</li>
+      </ul>
+    </section>
+
+    <section class="info-block panel">
+      <h2>Hosting &amp; Deployment</h2>
+
+      <ul>
+        <li><strong>AWS ECS</strong> (Elastic Container Service): Host your Spring Boot backend here. You can containerize your Spring Boot application using Docker and run it on ECS (ideally using AWS Fargate for serverless container management). This handles the heavy backend logic, relational database connections, and business APIs.</li>
+        <li><strong>AWS Amplify:</strong> Host your frontends (Angular, React, Ext JS) here. Amplify provides a fully managed hosting service for single-page applications (SPAs). It automates deployments from your Git repositories, handles CDN caching via Amazon CloudFront, and secures your apps with HTTPS out of the box.</li>
+      </ul>
+    </section>
+
+    <section class="info-block panel">
+      <h2>Data &amp; Serverless Operations</h2>
+
+      <ul>
+        <li><strong>Amazon DynamoDB:</strong> This serves as your NoSQL / Non-Relational Database. It offers single-digit millisecond latency at scale. It is perfect for storing flexible document-based data, application logs, dynamic product catalogs, or user sessions.</li>
+        <li><strong>AWS Lambda:</strong> Handle event-driven or lightweight backend tasks. Instead of putting everything in your Spring Boot app, use Lambda for isolated tasks like processing file uploads, sending automated email notifications, or running scheduled cron jobs. Lambda can read/write directly to DynamoDB.</li>
+      </ul>
+    </section>
+
+    <section class="info-block panel">
+      <h2>Security &amp; Identity Management</h2>
+
+      <ul>
+        <li><strong>AWS IAM</strong> (Identity and Access Management): Secure infrastructure access. Use IAM to give your Spring Boot app (running on ECS) permissions to securely talk to DynamoDB or invoke Lambda functions without hardcoding access keys in your code.</li>
+      </ul>
+    </section>
+  </div>
+</section>
