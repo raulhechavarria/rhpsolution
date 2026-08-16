@@ -46,18 +46,18 @@ export class Contact {
     try {
       await firstValueFrom(this.contactService.submitInquiry({ ...this.form }));
 
-        this.isSuccess = true;
-        this.message = 'Your inquiry has been received. We will contact you shortly.';
-        this.form = {
-          name: '',
-          email: '',
-          company: '',
-          projectDetails: '',
-          submittedAt: new Date().toISOString(),
-        };
+      this.isSuccess = true;
+      this.message = 'Your inquiry has been received. We will contact you shortly.';
+      this.form = {
+        name: '',
+        email: '',
+        company: '',
+        projectDetails: '',
+        submittedAt: new Date().toISOString(),
+      };
     } catch {
       this.isSuccess = false;
-      this.message = 'There was an error sending your inquiry. Please try again later.';
+      this.message = 'The request took too long. Please check your email or try again later.';
     } finally {
       this.isSubmitting = false;
     }

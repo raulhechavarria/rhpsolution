@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { timeout } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 
@@ -18,6 +19,6 @@ export class ContactService {
   submitInquiry(submission: ContactSubmission) {
     return this.http.post(environment.apiUrl, submission, {
       headers: { 'Content-Type': 'application/json' },
-    });
+    }).pipe(timeout({ each: 15000 }));
   }
 }
