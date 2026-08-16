@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
 
@@ -20,27 +20,27 @@ export class Contact {
     submittedAt: new Date().toISOString(),
   };
 
-  isSubmitting = false;
-  message = '';
-  isSuccess = false;
+  // signals so zoneless Angular re-renders after async state changes
+  isSubmitting = signal(false);
+  message = signal('');
+  isSuccess = signal(false);
 
   constructor(private contactService: ContactService) {}
 
   async onSubmit(): Promise<void> {
-    if (this.isSubmitting) {
+    if (this.isSubmitting()) {
       return;
     }
 
-    this.message = '';
-    this.isSuccess = false;
+    this.message.set('');
+    this.isSuccess.set(false);
 
     if (!this.form.name?.trim() || !this.form.email?.trim() || !this.form.projectDetails?.trim()) {
-      this.message = 'Name, email, and project details are required.';
-      this.isSuccess = false;
+      this.message.set('Name, email, and project details are required.');
       return;
     }
 
-    this.isSubmitting = true;
+    this.isSubmitting.set(true);
     this.form.submittedAt = new Date().toISOString();
 
     try {
@@ -51,8 +51,8 @@ export class Contact {
         ),
       ]);
 
-      this.isSuccess = true;
-      this.message = 'Your inquiry has been received. We will contact you shortly.';
+      this.isSuccess.set(true);
+      this.message.set('Your inquiry has been received. We will contact you shortly.');
       this.form = {
         name: '',
         email: '',
@@ -61,10 +61,10 @@ export class Contact {
         submittedAt: new Date().toISOString(),
       };
     } catch {
-      this.isSuccess = false;
-      this.message = 'The request took too long. Please check your email or try again later.';
+      this.isSuccess.set(false);
+      this.message.set('The request took too long. Please check your email or try again later.');
     } finally {
-      this.isSubmitting = false;
+      this.isSubmitting.set(false);
     }
   }
 }

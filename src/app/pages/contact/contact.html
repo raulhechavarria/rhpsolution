@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <form class="contact-form" (ngSubmit)="onSubmit()" [attr.aria-busy]="isSubmitting" #contactForm="ngForm">
+    <form class="contact-form" (ngSubmit)="onSubmit()" [attr.aria-busy]="isSubmitting()" #contactForm="ngForm">
       <div class="field-row">
         <label>
           <span>Name</span>
@@ -52,13 +52,13 @@
         </label>
       </div>
 
-      <button type="submit" class="primary-btn" [disabled]="isSubmitting || contactForm.invalid">
-        <span class="submit-spinner" *ngIf="isSubmitting" aria-hidden="true"></span>
-        {{ isSubmitting ? 'Sending...' : 'Send inquiry' }}
+      <button type="submit" class="primary-btn" [disabled]="isSubmitting() || contactForm.invalid">
+        <span class="submit-spinner" *ngIf="isSubmitting()" aria-hidden="true"></span>
+        {{ isSubmitting() ? 'Sending...' : 'Send inquiry' }}
       </button>
 
-      <p class="form-message" [class.success]="isSuccess" *ngIf="message">
-        {{ message }}
+      <p class="form-message" [class.success]="isSuccess()" *ngIf="message()">
+        {{ message() }}
       </p>
     </form>
   </div>
