@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
 
 import { ContactService, ContactSubmission } from '../../services/contact.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-contact',
@@ -25,7 +26,7 @@ export class Contact {
   message = signal('');
   isSuccess = signal(false);
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService, protected language: LanguageService) {}
 
   async onSubmit(): Promise<void> {
     if (this.isSubmitting()) {
@@ -52,7 +53,7 @@ export class Contact {
       ]);
 
       this.isSuccess.set(true);
-      this.message.set('Your inquiry has been received. We will contact you shortly.');
+      this.message.set(this.language.text('contact.success'));
       this.form = {
         name: '',
         email: '',
@@ -62,7 +63,7 @@ export class Contact {
       };
     } catch {
       this.isSuccess.set(false);
-      this.message.set('The request took too long. Please check your email or try again later.');
+      this.message.set(this.language.text('contact.error'));
     } finally {
       this.isSubmitting.set(false);
     }

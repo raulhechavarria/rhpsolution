@@ -2,11 +2,8 @@
   <div class="contact-panel panel">
     <div class="contact-copy">
       <span class="eyebrow">Contact</span>
-      <h1>Let’s build a system that works for your business.</h1>
-      <p>
-        Tell us about your process, bottlenecks, and goals. We will help you define the right
-        architecture, workflow, and software solution to improve performance and scale reliably.
-      </p>
+      <h1>{{ language.text('contact.title') }}</h1>
+      <p>{{ language.text('contact.description') }}</p>
 
       <div class="contact-points">
         <div>
@@ -15,7 +12,7 @@
         </div>
         <div>
           <span class="label">Response time</span>
-          <strong>Within 24 hours</strong>
+          <strong>{{ language.text('contact.response') }}</strong>
         </div>
       </div>
     </div>
@@ -41,7 +38,7 @@
 
       <div class="field-row">
         <label>
-          <span>Project details</span>
+          <span>{{ language.text('contact.project') }}</span>
           <textarea
             rows="5"
             name="projectDetails"
@@ -54,7 +51,7 @@
 
       <button type="submit" class="primary-btn" [disabled]="isSubmitting() || contactForm.invalid">
         <span class="submit-spinner" *ngIf="isSubmitting()" aria-hidden="true"></span>
-        {{ isSubmitting() ? 'Sending...' : 'Send inquiry' }}
+        {{ isSubmitting() ? language.text('contact.sending') : language.text('contact.send') }}
       </button>
 
       <p class="form-message" [class.success]="isSuccess()" *ngIf="message()">

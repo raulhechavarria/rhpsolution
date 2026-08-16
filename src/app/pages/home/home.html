@@ -1,20 +1,17 @@
 <section class="home-page">
   <div class="hero panel">
     <div class="hero-copy">
-      <span class="eyebrow">Built for scale</span>
-      <h1>We build high-performance systems that move your business forward.</h1>
-      <p>
-        Custom software, ERP integrations, inventory intelligence, and operational platforms
-        designed to reduce friction and accelerate growth.
-      </p>
+      <span class="eyebrow">{{ language.text('home.eyebrow') }}</span>
+      <h1>{{ language.text('home.title') }}</h1>
+      <p>{{ language.text('home.description') }}</p>
       <div class="hero-actions">
-        <a class="primary-btn" routerLink="/about">Book a consultation</a>
-        <a class="secondary-btn" routerLink="/about">See our solutions</a>
+        <a class="primary-btn" routerLink="/contact">{{ language.text('home.consultation') }}</a>
+        <a class="secondary-btn" routerLink="/solutions">{{ language.text('home.solutions') }}</a>
       </div>
       <ul class="hero-meta" aria-label="Key business benefits">
-        <li>Scalable architecture</li>
-        <li>Secure by design</li>
-        <li>Operational clarity</li>
+        <li>{{ language.text('home.smallBusiness') }}</li>
+        <li>{{ language.text('home.benefit1') }}</li>
+        <li>{{ language.text('home.benefit2') }}</li>
       </ul>
     </div>
 
@@ -41,15 +38,15 @@
 
   <section class="solutions-section">
     <div class="section-heading">
-      <span class="eyebrow">Solutions</span>
-      <h2>Modular systems designed around real operations.</h2>
+      <span class="eyebrow">{{ language.text('home.solutionsEyebrow') }}</span>
+      <h2>{{ language.text('home.solutionsTitle') }}</h2>
     </div>
 
     <div class="bento-grid">
       <article class="feature-card card-tall">
         <div class="card-icon">⚙️</div>
-        <h3>Inventory & logistics</h3>
-        <p>Real-time stock visibility, warehouse flow automation, and predictive replenishment.</p>
+        <h3>{{ language.text('home.inventoryTitle') }}</h3>
+        <p>{{ language.text('home.inventoryText') }}</p>
         <ul>
           <li>Demand tracking</li>
           <li>Warehouse controls</li>
@@ -59,14 +56,14 @@
 
       <article class="feature-card">
         <div class="card-icon">📊</div>
-        <h3>Finance & ERP</h3>
-        <p>Robust financial management with streamlined reporting and secure workflow orchestration.</p>
+        <h3>{{ language.text('home.erpTitle') }}</h3>
+        <p>{{ language.text('home.erpText') }}</p>
       </article>
 
       <article class="feature-card">
         <div class="card-icon">🧩</div>
-        <h3>Custom platforms</h3>
-        <p>Tailored software architecture that connects people, tools, and business logic.</p>
+        <h3>{{ language.text('home.customTitle') }}</h3>
+        <p>{{ language.text('home.customText') }}</p>
       </article>
 
       <article class="feature-card wide-card">
@@ -79,8 +76,8 @@
 
   <section class="why-us panel">
     <div class="section-heading left-aligned">
-      <span class="eyebrow">Why us</span>
-      <h2>Reliable systems, built for performance and long-term scale.</h2>
+      <span class="eyebrow">{{ language.text('home.whyEyebrow') }}</span>
+      <h2>{{ language.text('home.whyTitle') }}</h2>
     </div>
 
     <div class="benefits-grid">
@@ -109,9 +106,9 @@
 
   <section class="closing-cta panel">
     <div>
-      <span class="eyebrow">Ready to optimize</span>
-      <h2>Need a custom system that supports your growth?</h2>
+      <span class="eyebrow">{{ language.text('home.ctaEyebrow') }}</span>
+      <h2>{{ language.text('home.ctaTitle') }}</h2>
     </div>
-    <a class="primary-btn" routerLink="/about">Write us</a>
+    <a class="primary-btn" routerLink="/contact">{{ language.text('home.write') }}</a>
   </section>
 </section>

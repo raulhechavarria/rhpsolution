@@ -2,18 +2,23 @@
   <header class="topbar">
     <a class="brand" routerLink="/home">RHP Solution</a>
     <nav class="topnav" aria-label="Primary">
-      @for (item of navItems; track item.label) {
+      @for (item of navItems; track item.key) {
         <a
           class="nav-link"
           [routerLink]="item.route"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
         >
-          {{ item.label }}
+          {{ language.text(item.key) }}
         </a>
       }
     </nav>
-    <a class="nav-cta" routerLink="/contact">Book a call</a>
+    <div class="header-actions">
+      <button class="language-toggle" type="button" (click)="language.toggle()" [attr.aria-label]="language.language() === 'en' ? 'Cambiar a español' : 'Switch to English'">
+        {{ language.language() === 'en' ? 'ES' : 'EN' }}
+      </button>
+      <a class="nav-cta" routerLink="/contact">{{ language.text('nav.book') }}</a>
+    </div>
   </header>
 
   <main class="page-content">
