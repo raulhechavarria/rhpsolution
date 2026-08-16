@@ -156,6 +156,28 @@ textarea:focus {
   transform: translateY(-1px);
 }
 
+.primary-btn:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
+.submit-spinner {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-right: 0.5rem;
+  border: 2px solid rgba(9, 17, 29, 0.3);
+  border-top-color: #09111d;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .form-message {
   margin: 0;
   color: #fca5a5;

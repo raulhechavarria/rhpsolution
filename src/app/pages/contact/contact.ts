@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { firstValueFrom } from 'rxjs';
 
 import { ContactService, ContactSubmission } from '../../services/contact.service';
 
@@ -25,7 +26,11 @@ export class Contact {
 
   constructor(private contactService: ContactService) {}
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
+    if (this.isSubmitting) {
+      return;
+    }
+
     this.message = '';
     this.isSuccess = false;
 
@@ -38,9 +43,9 @@ export class Contact {
     this.isSubmitting = true;
     this.form.submittedAt = new Date().toISOString();
 
-    this.contactService.submitInquiry({ ...this.form }).subscribe({
-      next: () => {
-        this.isSubmitting = false;
+    try {
+      await firstValueFrom(this.contactService.submitInquiry({ ...this.form }));
+
         this.isSuccess = true;
         this.message = 'Your inquiry has been received. We will contact you shortly.';
         this.form = {
@@ -50,12 +55,11 @@ export class Contact {
           projectDetails: '',
           submittedAt: new Date().toISOString(),
         };
-      },
-      error: () => {
-        this.isSubmitting = false;
-        this.isSuccess = false;
-        this.message = 'There was an error sending your inquiry. Please try again later.';
-      },
-    });
+    } catch {
+      this.isSuccess = false;
+      this.message = 'There was an error sending your inquiry. Please try again later.';
+    } finally {
+      this.isSubmitting = false;
+    }
   }
 }
