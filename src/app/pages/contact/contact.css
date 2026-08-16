@@ -156,6 +156,16 @@ textarea:focus {
   transform: translateY(-1px);
 }
 
+.form-message {
+  margin: 0;
+  color: #fca5a5;
+  font-size: 0.95rem;
+}
+
+.form-message.success {
+  color: #86efac;
+}
+
 @media (max-width: 900px) {
   .contact-panel {
     grid-template-columns: 1fr;
