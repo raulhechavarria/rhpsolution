@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-results',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './results.html',
   styleUrl: './results.css',
 })
-export class Results {}
+export class Results {
+  constructor(protected language: LanguageService) {}
+}

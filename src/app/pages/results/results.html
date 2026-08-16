@@ -1,65 +1,54 @@
 <section class="results-page">
   <div class="results-header panel">
-    <span class="eyebrow">Results</span>
-    <h1>Results that improve operations and decision-making</h1>
-    <p>
-      We help businesses reduce friction, eliminate operational blind spots, and turn data into
-      better decisions with faster, more reliable processes.
-    </p>
+    <span class="eyebrow">{{ language.text('results.eyebrow') }}</span>
+    <h1>{{ language.text('results.title') }}</h1>
+    <p>{{ language.text('results.description') }}</p>
   </div>
 
   <div class="kpi-grid">
     <article class="kpi-card panel">
       <span class="metric">40%</span>
-      <h3>Operational efficiency</h3>
-      <p>Reduced manual work through workflow automation and process standardization.</p>
+      <h3>{{ language.text('results.efficiency') }}</h3>
+      <p>{{ language.text('results.efficiencyText') }}</p>
     </article>
 
     <article class="kpi-card panel">
       <span class="metric">99.9%</span>
-      <h3>System reliability</h3>
-      <p>Improved platform uptime and stability with secure cloud-based infrastructure.</p>
+      <h3>{{ language.text('results.reliability') }}</h3>
+      <p>{{ language.text('results.reliabilityText') }}</p>
     </article>
 
     <article class="kpi-card panel">
       <span class="metric">3x</span>
-      <h3>Visibility</h3>
-      <p>Clearer control of inventory, invoicing, consumption, and production indicators.</p>
+      <h3>{{ language.text('results.visibility') }}</h3>
+      <p>{{ language.text('results.visibilityText') }}</p>
     </article>
 
     <article class="kpi-card panel">
       <span class="metric">60%</span>
-      <h3>Manual reduction</h3>
-      <p>Lower dependency on paper records, spreadsheets, and repetitive tasks.</p>
+      <h3>{{ language.text('results.reduction') }}</h3>
+      <p>{{ language.text('results.reductionText') }}</p>
     </article>
   </div>
 
   <div class="comparison-section panel">
     <div class="section-heading">
-      <span class="eyebrow">Before vs After</span>
-      <h2>Real operational change</h2>
+      <span class="eyebrow">{{ language.text('results.beforeAfter') }}</span>
+      <h2>{{ language.text('results.change') }}</h2>
     </div>
 
     <div class="comparison-grid">
       <div class="compare-block">
-        <h3>Before</h3>
+        <h3>{{ language.text('results.before') }}</h3>
         <ul>
-          <li>Inventory losses, stock inconsistencies, and limited visibility into product availability.</li>
-          <li>Invoices, contracts, and supporting documents scattered across paper records and isolated files.</li>
-          <li>Stations without reliable consumption data, making operational decisions difficult.</li>
-          <li>Unplanned routes, inefficient scheduling, and poor daily coordination.</li>
-          <li>Estimated income disconnected from actual production and financial performance.</li>
+          <li>{{ language.text('results.before1') }}</li><li>{{ language.text('results.before2') }}</li><li>{{ language.text('results.before3') }}</li><li>{{ language.text('results.before4') }}</li><li>{{ language.text('results.before5') }}</li>
         </ul>
       </div>
 
       <div class="compare-block after">
-        <h3>After</h3>
+        <h3>{{ language.text('results.after') }}</h3>
         <ul>
-          <li>Real-time inventory visibility with product traceability, last purchase cost tracking, and faster stock lookup.</li>
-          <li>Digital document management that standardizes contracts and invoices into a single, controlled format.</li>
-          <li>Connected stations reporting live consumption metrics and delivering actionable operational dashboards.</li>
-          <li>Optimized route planning and improved execution efficiency across daily field operations.</li>
-          <li>Production and projected income aligned with actual business outcomes for better financial control.</li>
+          <li>{{ language.text('results.after1') }}</li><li>{{ language.text('results.after2') }}</li><li>{{ language.text('results.after3') }}</li><li>{{ language.text('results.after4') }}</li><li>{{ language.text('results.after5') }}</li>
         </ul>
       </div>
     </div>
@@ -67,47 +56,28 @@
 
   <div class="case-grid">
     <article class="case-card panel">
-      <h3>Inventory &amp; stock</h3>
-      <p>
-        Before: inventory losses, fragmented records, and delayed product identification. After:
-        faster product lookup, real-time stock visibility, last-cost tracking, and more reliable
-        purchasing decisions.
-      </p>
+      <h3>{{ language.text('results.inventory') }}</h3>
+      <p>{{ language.text('results.inventoryText') }}</p>
     </article>
 
     <article class="case-card panel">
-      <h3>Invoice register</h3>
-      <p>
-        Before: contracts and invoices were often lost or stored in inconsistent paper formats. After:
-        documents are captured digitally, standardized, and easier to audit, track, and reconcile.
-      </p>
+      <h3>{{ language.text('results.invoices') }}</h3>
+      <p>{{ language.text('results.invoicesText') }}</p>
     </article>
 
     <article class="case-card panel">
-      <h3>Electrical consumption</h3>
-      <p>
-        Before: stations lacked consistent information about energy use and operating patterns. After:
-        networked stations report live consumption data through a centralized system that supports
-        informed decision-making.
-      </p>
+      <h3>{{ language.text('results.energy') }}</h3>
+      <p>{{ language.text('results.energyText') }}</p>
     </article>
 
     <article class="case-card panel">
-      <h3>Landscaping schedule</h3>
-      <p>
-        Before: work orders were spread across the day without clear geographic coordination. After:
-        field teams are grouped more effectively, locations are planned more efficiently, and more
-        tasks are completed within the same operating window.
-      </p>
+      <h3>{{ language.text('results.schedule') }}</h3>
+      <p>{{ language.text('results.scheduleText') }}</p>
     </article>
 
     <article class="case-card panel wide-card">
-      <h3>MeatTrace Manager</h3>
-      <p>
-        Before: production reporting and expected income were not fully aligned, creating uncertainty
-        in operational planning. After: daily production is tracked against estimated financial
-        performance, enabling more accurate forecasting and stronger management control.
-      </p>
+      <h3>{{ language.text('results.meatTrace') }}</h3>
+      <p>{{ language.text('results.meatTraceText') }}</p>
     </article>
   </div>
 </section>

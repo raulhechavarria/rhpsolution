@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-workflow',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './workflow.html',
   styleUrl: './workflow.css',
 })
-export class Workflow {}
+export class Workflow {
+  constructor(protected language: LanguageService) {}
+}
