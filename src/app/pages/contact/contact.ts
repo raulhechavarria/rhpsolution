@@ -44,7 +44,12 @@ export class Contact {
     this.form.submittedAt = new Date().toISOString();
 
     try {
-      await firstValueFrom(this.contactService.submitInquiry({ ...this.form }));
+      await Promise.race([
+        firstValueFrom(this.contactService.submitInquiry({ ...this.form })),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Contact request timed out')), 10000)
+        ),
+      ]);
 
       this.isSuccess = true;
       this.message = 'Your inquiry has been received. We will contact you shortly.';
