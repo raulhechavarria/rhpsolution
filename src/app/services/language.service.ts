@@ -38,6 +38,7 @@ type CopyKey =
   | 'contact.project'
   | 'contact.send'
   | 'contact.sending'
+  | 'contact.commitmentNote'
   | 'contact.success'
   | 'contact.error'
   | 'solutions.eyebrow' | 'solutions.title' | 'solutions.description'
@@ -76,6 +77,7 @@ const copy: Record<Language, Record<CopyKey, string>> = {
     'contact.title': 'Let’s build a system that works for your business.',
     'contact.description': 'Tell us about your process, bottlenecks, and goals. We will help you choose a practical solution for your company.',
     'contact.response': 'Within 24 hours', 'contact.project': 'Project details', 'contact.send': 'Send inquiry', 'contact.sending': 'Sending...',
+    'contact.commitmentNote': 'No commitment — just a conversation about what\'s possible.',
     'contact.success': 'Your inquiry has been received. We will contact you shortly.', 'contact.error': 'The request took too long. Please try again later.',
     'solutions.eyebrow': 'Solutions', 'solutions.title': 'End-to-end digital product development', 'solutions.description': 'We design and build software systems that align technology with business goals, from early planning to continuous improvement after deployment.',
     'solutions.step1Title': 'Planning & Ideation', 'solutions.step1Text': 'Defining the project scope, business goals, budget, and technical feasibility.', 'solutions.step2Title': 'Requirements Analysis', 'solutions.step2Text': 'Gathering and documenting what users need through user stories and functional requirements.', 'solutions.step3Title': 'System Design', 'solutions.step3Text': 'Creating software architecture, database models, workflows, and UI/UX prototypes.', 'solutions.step4Title': 'Development & Coding', 'solutions.step4Text': 'Writing the front-end interface and back-end server logic and database code.', 'solutions.step5Title': 'Testing & QA', 'solutions.step5Text': 'Running unit, integration, security, and performance tests to find and fix bugs.', 'solutions.step6Title': 'Deployment & Implementation', 'solutions.step6Text': 'Releasing the software to cloud or on-premise environments for final users.', 'solutions.step7Title': 'Maintenance & Evolution', 'solutions.step7Text': 'Monitoring, fixing bugs, optimizing performance, and adding new features over time.',
@@ -100,6 +102,7 @@ const copy: Record<Language, Record<CopyKey, string>> = {
     'contact.title': 'Construyamos un sistema que funcione para tu Compañía.',
     'contact.description': 'Cuéntanos sobre tus procesos, obstáculos y objetivos. Te ayudaremos a elegir una solución práctica para tu empresa.',
     'contact.response': 'En menos de 24 horas', 'contact.project': 'Detalles del proyecto', 'contact.send': 'Enviar consulta', 'contact.sending': 'Enviando...',
+    'contact.commitmentNote': 'Sin compromiso: solo una conversación sobre lo que es posible.',
     'contact.success': 'Recibimos tu consulta. Nos comunicaremos contigo pronto.', 'contact.error': 'La solicitud tardó demasiado. Inténtalo de nuevo más tarde.',
     'solutions.eyebrow': 'Soluciones', 'solutions.title': 'Desarrollo completo de productos digitales', 'solutions.description': 'Diseñamos y construimos sistemas de software que alinean la tecnología con los objetivos del negocio, desde la planificación hasta la mejora continua.',
     'solutions.step1Title': 'Planificación e ideación', 'solutions.step1Text': 'Definimos el alcance, objetivos, presupuesto y viabilidad técnica del proyecto.', 'solutions.step2Title': 'Análisis de requisitos', 'solutions.step2Text': 'Recopilamos y documentamos lo que los usuarios necesitan mediante historias de usuario y requisitos funcionales.', 'solutions.step3Title': 'Diseño del sistema', 'solutions.step3Text': 'Creamos la arquitectura, modelos de datos, flujos de trabajo y prototipos de interfaz.', 'solutions.step4Title': 'Desarrollo y programación', 'solutions.step4Text': 'Escribimos el código de la interfaz, la lógica del servidor y las bases de datos.', 'solutions.step5Title': 'Pruebas y calidad', 'solutions.step5Text': 'Ejecutamos pruebas unitarias, de integración, seguridad y rendimiento para corregir errores.', 'solutions.step6Title': 'Despliegue e implementación', 'solutions.step6Text': 'Publicamos el software en la nube o en servidores locales para los usuarios finales.', 'solutions.step7Title': 'Mantenimiento y evolución', 'solutions.step7Text': 'Monitoreamos, corregimos errores, optimizamos y agregamos nuevas funciones.',

@@ -54,6 +54,8 @@
         {{ isSubmitting() ? language.text('contact.sending') : language.text('contact.send') }}
       </button>
 
+      <p class="submission-note">{{ language.text('contact.commitmentNote') }}</p>
+
       <p class="form-message" [class.success]="isSuccess()" *ngIf="message()">
         {{ message() }}
       </p>
