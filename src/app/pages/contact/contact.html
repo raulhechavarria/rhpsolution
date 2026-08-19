@@ -1,0 +1,64 @@
+<section class="contact-page">
+  <div class="contact-panel panel">
+    <div class="contact-copy">
+      <span class="eyebrow">Contact</span>
+      <h1>{{ language.text('contact.title') }}</h1>
+      <p>{{ language.text('contact.description') }}</p>
+
+      <div class="contact-points">
+        <div>
+          <span class="label">Email</span>
+          <strong>rhpsolutionllc@gmail.com</strong>
+        </div>
+        <div>
+          <span class="label">Response time</span>
+          <strong>{{ language.text('contact.response') }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" (ngSubmit)="onSubmit()" [attr.aria-busy]="isSubmitting()" #contactForm="ngForm">
+      <div class="field-row">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" [(ngModel)]="form.name" placeholder="Your name" required />
+        </label>
+      </div>
+
+      <div class="field-row two-columns">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" [(ngModel)]="form.email" placeholder="your@email.com" required />
+        </label>
+        <label>
+          <span>Company</span>
+          <input type="text" name="company" [(ngModel)]="form.company" placeholder="Company name" />
+        </label>
+      </div>
+
+      <div class="field-row">
+        <label>
+          <span>{{ language.text('contact.project') }}</span>
+          <textarea
+            rows="5"
+            name="projectDetails"
+            [(ngModel)]="form.projectDetails"
+            placeholder="Tell us about your workflow, challenge, or system needs"
+            required
+          ></textarea>
+        </label>
+      </div>
+
+      <button type="submit" class="primary-btn" [disabled]="isSubmitting() || contactForm.invalid">
+        <span class="submit-spinner" *ngIf="isSubmitting()" aria-hidden="true"></span>
+        {{ isSubmitting() ? language.text('contact.sending') : language.text('contact.send') }}
+      </button>
+
+      <p class="submission-note">{{ language.text('contact.commitmentNote') }}</p>
+
+      <p class="form-message" [class.success]="isSuccess()" *ngIf="message()">
+        {{ message() }}
+      </p>
+    </form>
+  </div>
+</section>
