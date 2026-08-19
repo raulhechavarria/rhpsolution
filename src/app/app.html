@@ -1,0 +1,43 @@
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" routerLink="/home">RHP Solutions</a>
+    <nav class="topnav" aria-label="Primary">
+      @for (item of navItems; track item.key) {
+        <a
+          class="nav-link"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
+        >
+          {{ language.text(item.key) }}
+        </a>
+      }
+    </nav>
+    <div class="header-actions">
+      <button class="language-toggle" type="button" (click)="language.toggle()" [attr.aria-label]="language.language() === 'en' ? 'Cambiar a español' : 'Switch to English'">
+        {{ language.language() === 'en' ? 'ES' : 'EN' }}
+      </button>
+      <a class="nav-cta" routerLink="/contact">{{ language.text('nav.book') }}</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <router-outlet />
+  </main>
+
+  <footer class="footer">
+    <nav class="footnav" aria-label="Footer">
+      @for (item of socialLinks; track item.label) {
+        <a
+          class="nav-foot-link"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+    <p>© 2026 RHP Solutions. All rights reserved.</p>
+  </footer>
+</div>
