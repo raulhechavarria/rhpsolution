@@ -28,14 +28,25 @@
   <footer class="footer">
     <nav class="footnav" aria-label="Footer">
       @for (item of socialLinks; track item.label) {
-        <a
-          class="nav-foot-link"
-          [routerLink]="item.route"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
-        >
-          {{ item.label }}
-        </a>
+        @if (item.route.startsWith('http')) {
+          <a
+            class="nav-foot-link"
+            [href]="item.route"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ item.label }}
+          </a>
+        } @else {
+          <a
+            class="nav-foot-link"
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
+          >
+            {{ item.label }}
+          </a>
+        }
       }
     </nav>
     <p>© 2026 RHP Solutions. All rights reserved.</p>
