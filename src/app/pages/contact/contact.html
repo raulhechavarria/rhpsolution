@@ -1,0 +1,44 @@
+<section class="contact-page">
+  <div class="contact-container">
+    <div class="contact-copy">
+      <span class="eyebrow">{{ language.text('nav.contact') }}</span>
+      <h1>Tell us what you need.</h1>
+      <p>
+        Share a few details about your business, your process, and the challenge you want to solve.
+        We’ll help you assess the right fit and next steps.
+      </p>
+    </div>
+
+    <form class="contact-form" (ngSubmit)="onSubmit()" novalidate>
+      <label>
+        <span>{{ language.text('contact.name') }}</span>
+        <input type="text" name="name" [(ngModel)]="form.name" required />
+      </label>
+
+      <label>
+        <span>{{ language.text('contact.email') }}</span>
+        <input type="email" name="email" [(ngModel)]="form.email" required />
+      </label>
+
+      <label>
+        <span>{{ language.text('contact.company') }}</span>
+        <input type="text" name="company" [(ngModel)]="form.company" />
+      </label>
+
+      <label>
+        <span>{{ language.text('contact.projectDetails') }}</span>
+        <textarea name="projectDetails" [(ngModel)]="form.projectDetails" rows="5" required></textarea>
+      </label>
+
+      <button type="submit" [disabled]="isSubmitting()">
+        {{ isSubmitting() ? 'Sending...' : language.text('contact.submit') }}
+      </button>
+
+      @if (message()) {
+        <p class="form-message" [class.success]="isSuccess()" [class.error]="!isSuccess()">
+          {{ message() }}
+        </p>
+      }
+    </form>
+  </div>
+</section>
