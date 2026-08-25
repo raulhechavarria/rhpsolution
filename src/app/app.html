@@ -27,7 +27,7 @@
 
   <footer class="footer">
     <nav class="footnav" aria-label="Footer">
-      @for (item of socialLinks; track item.label) {
+      @for (item of socialLinks; track item.key) {
         @if (item.route.startsWith('http')) {
           <a
             class="nav-foot-link"
@@ -35,7 +35,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            {{ item.label }}
+            {{ language.text(item.key) }}
           </a>
         } @else {
           <a
@@ -44,11 +44,11 @@
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
           >
-            {{ item.label }}
+            {{ language.text(item.key) }}
           </a>
         }
       }
     </nav>
-    <p>© 2026 RHP Solutions. All rights reserved.</p>
+    <p>{{ language.text('footer.copyright') }}</p>
   </footer>
 </div>

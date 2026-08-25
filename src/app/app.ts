@@ -44,9 +44,9 @@ export class App {
   ];
 
   protected readonly socialLinks = [
-    { label: 'LinkedIn', route: 'https://www.linkedin.com/in/raul-hechavarria-028356117/' },
-    { label: 'Email / Phone', route: '/about' },
-    { label: 'Contact', route: '/contact' }
+    { key: 'footer.linkedin', route: 'https://www.linkedin.com/in/raul-hechavarria-028356117/' },
+    { key: 'footer.emailPhone', route: '/about' },
+    { key: 'footer.contact', route: '/contact' }
   ];
 
   private updateSeo(): void {

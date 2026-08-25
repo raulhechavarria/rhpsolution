@@ -1,60 +1,57 @@
 <section class="contact-page">
   <div class="panel contact-panel">
     <div class="contact-copy">
-      <span class="eyebrow">Contact</span>
-      <h1>Let’s build a system that works for your business.</h1>
-      <p>
-        Tell us about your process, bottlenecks, and goals. We will help you choose a practical
-        solution for your company.
-      </p>
+      <span class="eyebrow">{{ language.text('contact.eyebrow') }}</span>
+      <h1>{{ language.text('contact.title') }}</h1>
+      <p>{{ language.text('contact.description') }}</p>
 
       <div class="contact-points">
         <div>
-          <span class="label">Email</span>
+          <span class="label">{{ language.text('contact.email') }}</span>
           <strong>rhpsolutionllc@gmail.com</strong>
         </div>
 
         <div>
-          <span class="label">Response time</span>
-          <strong>Within 24 hours</strong>
+          <span class="label">{{ language.text('contact.responseTime') }}</span>
+          <strong>{{ language.text('contact.responseValue') }}</strong>
         </div>
       </div>
     </div>
 
     <form class="contact-form" (ngSubmit)="onSubmit()" novalidate>
       <div class="field-row">
-        <label>Name</label>
-        <input type="text" name="name" [(ngModel)]="form.name" placeholder="Your name" required />
+        <label>{{ language.text('contact.name') }}</label>
+        <input type="text" name="name" [(ngModel)]="form.name" [placeholder]="language.text('contact.namePlaceholder')" required />
       </div>
 
       <div class="two-columns">
         <div class="field-row">
-          <label>Email</label>
-          <input type="email" name="email" [(ngModel)]="form.email" placeholder="your@email.com" required />
+          <label>{{ language.text('contact.email') }}</label>
+          <input type="email" name="email" [(ngModel)]="form.email" [placeholder]="language.text('contact.emailPlaceholder')" required />
         </div>
 
         <div class="field-row">
-          <label>Company</label>
-          <input type="text" name="company" [(ngModel)]="form.company" placeholder="Company name" />
+          <label>{{ language.text('contact.company') }}</label>
+          <input type="text" name="company" [(ngModel)]="form.company" [placeholder]="language.text('contact.companyPlaceholder')" />
         </div>
       </div>
 
       <div class="field-row">
-        <label>Project details</label>
+        <label>{{ language.text('contact.projectDetails') }}</label>
         <textarea
           name="projectDetails"
           [(ngModel)]="form.projectDetails"
           rows="5"
-          placeholder="Tell us about your workflow, challenge, or system needs"
+          [placeholder]="language.text('contact.detailsPlaceholder')"
           required
         ></textarea>
       </div>
 
       <button class="primary-btn" type="submit" [disabled]="isSubmitting()">
         @if (isSubmitting()) {
-          <span class="submit-spinner" aria-label="Sending"></span>
+          <span class="submit-spinner" [attr.aria-label]="language.text('contact.sending')"></span>
         }
-        {{ isSubmitting() ? 'Sending...' : 'Send inquiry' }}
+        {{ isSubmitting() ? language.text('contact.sending') : language.text('contact.submit') }}
       </button>
 
       @if (message()) {
@@ -62,7 +59,7 @@
           {{ message() }}
         </p>
       } @else {
-        <p class="form-message">No commitment — just a conversation about what's possible.</p>
+        <p class="form-message">{{ language.text('contact.noCommitment') }}</p>
       }
     </form>
   </div>

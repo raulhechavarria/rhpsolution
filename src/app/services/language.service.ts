@@ -30,15 +30,30 @@ export class LanguageService {
         'home.solutionsTitle': 'Technology that solves real business problems.',
         'home.inventoryTitle': 'Operations & inventory',
         'home.inventoryText': 'Track work, stock, and daily operations without relying on disconnected spreadsheets.',
+        'home.demandTracking': 'Demand tracking',
+        'home.warehouseControls': 'Warehouse controls',
+        'home.processAutomation': 'Process automation',
         'home.erpTitle': 'Finance & administration',
         'home.erpText': 'Simplify reporting, approvals, and recurring administrative work.',
         'home.customTitle': 'Custom platforms',
         'home.customText': 'Build only what your team needs, connected to the tools you already use.',
+        'home.accelerationTitle': 'Operational acceleration',
+        'home.accelerationText': 'We simplify legacy complexity and build systems that make growth easier to manage.',
         'home.whyEyebrow': 'Why us',
         'home.whyTitle': 'A practical technology partner for growing companies.',
         'home.ctaEyebrow': 'Ready to improve',
         'home.ctaTitle': 'Tell us what is slowing your business down.',
         'home.write': 'Write us',
+        'home.architectureTitle': 'Robust architecture',
+        'home.architectureText': 'Secure, scalable foundations designed to handle operational complexity and future growth.',
+        'home.clarityTitle': 'Operational clarity',
+        'home.clarityText': 'Dashboards and workflows built to simplify decision-making across departments.',
+        'home.performanceTitle': 'High performance',
+        'home.performanceText': 'Lean engineering practices that prioritize speed, reliability, and measurable results.',
+        'home.hostingTitle': 'Hosting service',
+        'home.hostingText': 'AWS infrastructure for DNS, databases, and secure network management, ensuring availability and resilience.',
+        'home.benefitsLabel': 'Key business benefits',
+        'home.architecturePreview': 'System architecture preview',
         'results.eyebrow': 'Results',
         'results.title': 'Operational improvements that create momentum.',
         'results.description': 'We help businesses reduce friction, see clearer data, and improve where the day-to-day work actually happens.',
@@ -112,6 +127,36 @@ export class LanguageService {
         'contact.submit': 'Send inquiry',
         'contact.success': 'Thanks! Your message was sent successfully.',
         'contact.error': 'Something went wrong. Please try again.'
+        , 'contact.eyebrow': 'Contact'
+        , 'contact.title': 'Let’s build a system that works for your business.'
+        , 'contact.description': 'Tell us about your process, bottlenecks, and goals. We will help you choose a practical solution for your company.'
+        , 'contact.responseTime': 'Response time'
+        , 'contact.responseValue': 'Within 24 hours'
+        , 'contact.namePlaceholder': 'Your name'
+        , 'contact.emailPlaceholder': 'your@email.com'
+        , 'contact.companyPlaceholder': 'Company name'
+        , 'contact.detailsPlaceholder': 'Tell us about your workflow, challenge, or system needs'
+        , 'contact.sending': 'Sending...'
+        , 'contact.noCommitment': "No commitment — just a conversation about what's possible."
+        , 'about.title': 'About our service'
+        , 'about.description': 'We help businesses grow with strategic digital solutions that combine branding, communication, content, and marketing. From corporate identity to online reputation management, we create clear and impactful experiences that connect your brand with the right audience. Contact us to learn more about how we can help your business thrive in the digital landscape.'
+        , 'about.phone': 'Phone'
+        , 'about.email': 'Email'
+        , 'about.imageAlt': 'Evelyn and Raul'
+        , 'services.customSystem': 'Custom system'
+        , 'services.opticalInventory': 'Optical inventory'
+        , 'services.cryptoMarket': 'Crypto market'
+        , 'services.inventorySystem': 'Inventory system'
+        , 'services.telemetry': 'Telemetry'
+        , 'services.landscapingSchedule': 'Landscaping schedule'
+        , 'services.meatTraceManager': 'MeatTrace Manager'
+        , 'services.agriHubErp': 'AgriHub ERP'
+        , 'services.invoicesRegister': 'Invoices register'
+        , 'services.electricalConsumption': 'Electrical consumption'
+        , 'footer.linkedin': 'LinkedIn'
+        , 'footer.emailPhone': 'Email / Phone'
+        , 'footer.contact': 'Contact'
+        , 'footer.copyright': '© 2026 RHP Solutions. All rights reserved.'
       },
       es: {
         'nav.solutions': 'Soluciones',
@@ -133,15 +178,30 @@ export class LanguageService {
         'home.solutionsTitle': 'Tecnología que resuelve problemas reales del negocio.',
         'home.inventoryTitle': 'Operaciones e inventario',
         'home.inventoryText': 'Controle trabajo, stock y operaciones diarias sin depender de hojas de cálculo desconectadas.',
+        'home.demandTracking': 'Seguimiento de la demanda',
+        'home.warehouseControls': 'Controles de almacén',
+        'home.processAutomation': 'Automatización de procesos',
         'home.erpTitle': 'Finanzas y administración',
         'home.erpText': 'Simplifique reportes, aprobaciones y tareas administrativas recurrentes.',
         'home.customTitle': 'Plataformas personalizadas',
         'home.customText': 'Construya solo lo que su equipo necesita, conectado con las herramientas que ya usa.',
+        'home.accelerationTitle': 'Aceleración operativa',
+        'home.accelerationText': 'Simplificamos la complejidad heredada y creamos sistemas que facilitan la gestión del crecimiento.',
         'home.whyEyebrow': '¿Por qué nosotros?',
         'home.whyTitle': 'Un aliado tecnológico práctico para empresas en crecimiento.',
         'home.ctaEyebrow': 'Listo para mejorar',
         'home.ctaTitle': 'Cuéntenos qué está frenando a su negocio.',
         'home.write': 'Escríbanos',
+        'home.architectureTitle': 'Arquitectura robusta',
+        'home.architectureText': 'Bases seguras y escalables diseñadas para manejar la complejidad operativa y el crecimiento futuro.',
+        'home.clarityTitle': 'Claridad operativa',
+        'home.clarityText': 'Dashboards y flujos de trabajo creados para simplificar la toma de decisiones entre departamentos.',
+        'home.performanceTitle': 'Alto rendimiento',
+        'home.performanceText': 'Prácticas de ingeniería eficientes que priorizan velocidad, confiabilidad y resultados medibles.',
+        'home.hostingTitle': 'Servicio de hosting',
+        'home.hostingText': 'Infraestructura AWS para DNS, bases de datos y redes seguras, garantizando disponibilidad y resiliencia.',
+        'home.benefitsLabel': 'Beneficios principales',
+        'home.architecturePreview': 'Vista previa de la arquitectura del sistema',
         'results.eyebrow': 'Resultados',
         'results.title': 'Mejoras operativas que generan impulso.',
         'results.description': 'Ayudamos a las empresas a reducir fricción, ver datos más claros y mejorar donde ocurre el trabajo del día a día.',
@@ -215,6 +275,36 @@ export class LanguageService {
         'contact.submit': 'Enviar consulta',
         'contact.success': '¡Gracias! Tu mensaje fue enviado correctamente.',
         'contact.error': 'Algo salió mal. Inténtalo de nuevo.'
+        , 'contact.eyebrow': 'Contacto'
+        , 'contact.title': 'Construyamos un sistema que funcione para tu negocio.'
+        , 'contact.description': 'Cuéntanos sobre tus procesos, dificultades y objetivos. Te ayudaremos a elegir una solución práctica para tu empresa.'
+        , 'contact.responseTime': 'Tiempo de respuesta'
+        , 'contact.responseValue': 'Dentro de 24 horas'
+        , 'contact.namePlaceholder': 'Tu nombre'
+        , 'contact.emailPlaceholder': 'tu@correo.com'
+        , 'contact.companyPlaceholder': 'Nombre de la empresa'
+        , 'contact.detailsPlaceholder': 'Cuéntanos sobre tu flujo de trabajo, desafío o necesidades del sistema'
+        , 'contact.sending': 'Enviando...'
+        , 'contact.noCommitment': 'Sin compromiso: solo una conversación sobre lo que es posible.'
+        , 'about.title': 'Sobre nuestro servicio'
+        , 'about.description': 'Ayudamos a las empresas a crecer con soluciones digitales estratégicas que combinan marca, comunicación, contenido y marketing. Desde la identidad corporativa hasta la gestión de la reputación en línea, creamos experiencias claras e impactantes que conectan tu marca con la audiencia correcta. Contáctanos para conocer cómo podemos ayudar a que tu negocio prospere en el entorno digital.'
+        , 'about.phone': 'Teléfono'
+        , 'about.email': 'Correo electrónico'
+        , 'about.imageAlt': 'Evelyn y Raul'
+        , 'services.customSystem': 'Sistema personalizado'
+        , 'services.opticalInventory': 'Inventario óptico'
+        , 'services.cryptoMarket': 'Mercado de criptomonedas'
+        , 'services.inventorySystem': 'Sistema de inventario'
+        , 'services.telemetry': 'Telemetría'
+        , 'services.landscapingSchedule': 'Agenda de jardinería'
+        , 'services.meatTraceManager': 'MeatTrace Manager'
+        , 'services.agriHubErp': 'AgriHub ERP'
+        , 'services.invoicesRegister': 'Registro de facturas'
+        , 'services.electricalConsumption': 'Consumo eléctrico'
+        , 'footer.linkedin': 'LinkedIn'
+        , 'footer.emailPhone': 'Correo / Teléfono'
+        , 'footer.contact': 'Contacto'
+        , 'footer.copyright': '© 2026 RHP Solutions. Todos los derechos reservados.'
       }
     };
 

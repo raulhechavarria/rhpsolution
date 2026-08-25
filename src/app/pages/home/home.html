@@ -8,14 +8,14 @@
         <a class="primary-btn" routerLink="/contact">{{ language.text('home.consultation') }}</a>
         <a class="secondary-btn" routerLink="/solutions">{{ language.text('home.solutions') }}</a>
       </div>
-      <ul class="hero-meta" aria-label="Key business benefits">
+      <ul class="hero-meta" [attr.aria-label]="language.text('home.benefitsLabel')">
         <li>{{ language.text('home.smallBusiness') }}</li>
         <li>{{ language.text('home.benefit1') }}</li>
         <li>{{ language.text('home.benefit2') }}</li>
       </ul>
     </div>
 
-    <div class="hero-visual" aria-label="System architecture preview">
+    <div class="hero-visual" [attr.aria-label]="language.text('home.architecturePreview')">
       <div class="visual-window">
         <div class="window-topbar">
           <span></span>
@@ -48,9 +48,9 @@
         <h3>{{ language.text('home.inventoryTitle') }}</h3>
         <p>{{ language.text('home.inventoryText') }}</p>
         <ul>
-          <li>Demand tracking</li>
-          <li>Warehouse controls</li>
-          <li>Process automation</li>
+          <li>{{ language.text('home.demandTracking') }}</li>
+          <li>{{ language.text('home.warehouseControls') }}</li>
+          <li>{{ language.text('home.processAutomation') }}</li>
         </ul>
       </article>
 
@@ -68,8 +68,8 @@
 
       <article class="feature-card wide-card">
         <div class="card-icon">🚀</div>
-        <h3>Operational acceleration</h3>
-        <p>We simplify legacy complexity and build systems that make growth easier to manage.</p>
+        <h3>{{ language.text('home.accelerationTitle') }}</h3>
+        <p>{{ language.text('home.accelerationText') }}</p>
       </article>
     </div>
   </section>
@@ -83,23 +83,23 @@
     <div class="benefits-grid">
       <div class="benefit-item">
         <span>01</span>
-        <h3>Robust architecture</h3>
-        <p>Secure, scalable foundations designed to handle operational complexity and future growth.</p>
+        <h3>{{ language.text('home.architectureTitle') }}</h3>
+        <p>{{ language.text('home.architectureText') }}</p>
       </div>
       <div class="benefit-item">
         <span>02</span>
-        <h3>Operational clarity</h3>
-        <p>Dashboards and workflows built to simplify decision-making across departments.</p>
+        <h3>{{ language.text('home.clarityTitle') }}</h3>
+        <p>{{ language.text('home.clarityText') }}</p>
       </div>
       <div class="benefit-item">
         <span>03</span>
-        <h3>High performance</h3>
-        <p>Lean engineering practices that prioritize speed, reliability, and measurable results.</p>
+        <h3>{{ language.text('home.performanceTitle') }}</h3>
+        <p>{{ language.text('home.performanceText') }}</p>
       </div>
       <div class="benefit-item hosting-item">
         <span>04</span>
-        <h3>Hosting service</h3>
-        <p>AWS infrastructure for DNS, databases, and secure network management, ensuring availability and resilience.</p>
+        <h3>{{ language.text('home.hostingTitle') }}</h3>
+        <p>{{ language.text('home.hostingText') }}</p>
       </div>
     </div>
   </section>
