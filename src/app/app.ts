@@ -23,7 +23,9 @@ export class App {
 
   constructor() {
     this.language.setLanguage(this.router.url === '/es' || this.router.url.startsWith('/es/') ? 'es' : 'en');
-    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((event) => {
+      const routeUrl = event.urlAfterRedirects.split('?')[0].replace(/\/$/, '');
+      this.language.setLanguage(routeUrl === '/es' || routeUrl.startsWith('/es/') ? 'es' : 'en');
       this.updateSeo();
     });
 
