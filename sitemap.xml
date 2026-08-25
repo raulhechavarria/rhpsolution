@@ -24,4 +24,12 @@
   <url>
     <loc>https://rhpsolution.net/contact</loc>
   </url>
+  <url><loc>https://rhpsolution.net/es</loc></url>
+  <url><loc>https://rhpsolution.net/es/about</loc></url>
+  <url><loc>https://rhpsolution.net/es/solutions</loc></url>
+  <url><loc>https://rhpsolution.net/es/services</loc></url>
+  <url><loc>https://rhpsolution.net/es/workflow</loc></url>
+  <url><loc>https://rhpsolution.net/es/architecture</loc></url>
+  <url><loc>https://rhpsolution.net/es/results</loc></url>
+  <url><loc>https://rhpsolution.net/es/contact</loc></url>
 </urlset>

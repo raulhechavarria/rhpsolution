@@ -18,4 +18,13 @@ export const routes: Routes = [
   { path: 'architecture', component: Architecture },
   { path: 'results', component: Results },
   { path: 'contact', component: Contact }
+  , { path: 'es', redirectTo: 'es/home', pathMatch: 'full' }
+  , { path: 'es/home', component: Home }
+  , { path: 'es/about', component: About }
+  , { path: 'es/solutions', component: Solutions }
+  , { path: 'es/services', component: Services }
+  , { path: 'es/workflow', component: Workflow }
+  , { path: 'es/architecture', component: Architecture }
+  , { path: 'es/results', component: Results }
+  , { path: 'es/contact', component: Contact }
 ];

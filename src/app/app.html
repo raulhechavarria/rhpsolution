@@ -1,23 +1,23 @@
 <div class="app-shell">
   <header class="topbar">
-    <a class="brand" routerLink="/home">RHP Solutions</a>
+    <a class="brand" [routerLink]="localizedRoute('/home')">RHP Solutions</a>
     <nav class="topnav" aria-label="Primary">
       @for (item of navItems; track item.key) {
         <a
           class="nav-link"
-          [routerLink]="item.route"
+          [routerLink]="localizedRoute(item.route)"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
+          [routerLinkActiveOptions]="{ exact: localizedRoute(item.route) === localizedRoute('/home') }"
         >
           {{ language.text(item.key) }}
         </a>
       }
     </nav>
     <div class="header-actions">
-      <button class="language-toggle" type="button" (click)="language.toggle()" [attr.aria-label]="language.language() === 'en' ? 'Cambiar a español' : 'Switch to English'">
+      <button class="language-toggle" type="button" (click)="switchLanguage()" [attr.aria-label]="language.language() === 'en' ? 'Cambiar a español' : 'Switch to English'">
         {{ language.language() === 'en' ? 'ES' : 'EN' }}
       </button>
-      <a class="nav-cta" routerLink="/contact">{{ language.text('nav.book') }}</a>
+      <a class="nav-cta" [routerLink]="localizedRoute('/contact')">{{ language.text('nav.book') }}</a>
     </div>
   </header>
 
@@ -40,7 +40,7 @@
         } @else {
           <a
             class="nav-foot-link"
-            [routerLink]="item.route"
+            [routerLink]="localizedRoute(item.route)"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
           >

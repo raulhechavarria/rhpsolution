@@ -4,6 +4,10 @@ import { Injectable, signal } from '@angular/core';
 export class LanguageService {
   readonly language = signal<'en' | 'es'>('en');
 
+  setLanguage(language: 'en' | 'es'): void {
+    this.language.set(language);
+  }
+
   toggle(): void {
     this.language.update((current) => (current === 'en' ? 'es' : 'en'));
   }

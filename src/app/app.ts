@@ -22,6 +22,7 @@ export class App {
   private readonly document = inject(DOCUMENT);
 
   constructor() {
+    this.language.setLanguage(this.router.url === '/es' || this.router.url.startsWith('/es/') ? 'es' : 'en');
     this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
       this.updateSeo();
     });
@@ -50,10 +51,13 @@ export class App {
   ];
 
   private updateSeo(): void {
-    const path = this.router.url.split('?')[0].replace(/\/$/, '') || '/home';
-    const spanish = this.language.language() === 'es';
+    const routePath = this.router.url.split('?')[0].replace(/\/$/, '') || '/home';
+    const spanish = routePath === '/es' || routePath.startsWith('/es/');
+    const path = spanish ? routePath.replace(/^\/es/, '') || '/home' : routePath;
     const metadata = this.getMetadata(path, spanish);
-    const canonicalPath = path === '/home' ? '/' : path;
+    const canonicalPath = spanish
+      ? `/es${path === '/home' ? '' : path}`
+      : path === '/home' ? '/' : path;
     const canonicalUrl = `https://rhpsolution.net${canonicalPath}`;
 
     this.document.documentElement.lang = spanish ? 'es' : 'en';
@@ -70,6 +74,40 @@ export class App {
       this.document.head.appendChild(canonical);
     }
     canonical.href = canonicalUrl;
+
+    this.updateAlternateLinks(path, canonicalUrl);
+  }
+
+  protected localizedRoute(route: string): string {
+    const spanish = this.language.language() === 'es';
+    const path = route === '/home' ? '' : route;
+    return spanish ? `/es${path}` || '/es' : route;
+  }
+
+  protected switchLanguage(): void {
+    const routePath = this.router.url.split('?')[0].replace(/\/$/, '') || '/home';
+    const spanish = routePath === '/es' || routePath.startsWith('/es/');
+    const path = spanish ? routePath.replace(/^\/es/, '') || '/home' : routePath;
+    this.language.setLanguage(spanish ? 'en' : 'es');
+    this.router.navigateByUrl(spanish ? path : `/es${path === '/home' ? '' : path}`);
+  }
+
+  private updateAlternateLinks(path: string, canonicalUrl: string): void {
+    this.document.head.querySelectorAll('link[data-seo-alternate]').forEach((link) => link.remove());
+    const englishUrl = `https://rhpsolution.net${path === '/home' ? '/' : path}`;
+    const spanishUrl = `https://rhpsolution.net/es${path === '/home' ? '' : path}`;
+    for (const alternate of [
+      { lang: 'en', url: englishUrl },
+      { lang: 'es', url: spanishUrl },
+      { lang: 'x-default', url: englishUrl },
+    ]) {
+      const link = this.document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = alternate.lang;
+      link.href = alternate.url;
+      link.setAttribute('data-seo-alternate', 'true');
+      this.document.head.appendChild(link);
+    }
   }
 
   private getMetadata(path: string, spanish: boolean): { title: string; description: string } {
