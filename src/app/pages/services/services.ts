@@ -8,5 +8,16 @@ import { LanguageService } from '../../services/language.service';
   styleUrl: './services.css',
 })
 export class Services {
+  readonly opticalDemoVideo = '/videos/ClearStock.mp4';
+  isVideoModalOpen = false;
+
   constructor(protected language: LanguageService) {}
+
+  openOpticalDemo(): void {
+    this.isVideoModalOpen = true;
+  }
+
+  closeOpticalDemo(): void {
+    this.isVideoModalOpen = false;
+  }
 }
