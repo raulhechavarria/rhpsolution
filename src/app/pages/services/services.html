@@ -8,7 +8,17 @@
   <div class="services-list panel">
     <ul>
       <li>{{ language.text('services.customSystem') }}</li>
-      <li>{{ language.text('services.opticalInventory') }}</li>
+      <li
+        class="service-item service-item--video"
+        tabindex="0"
+        role="button"
+        aria-label="Play Optical ClearStock demo video"
+        (click)="openOpticalDemo()"
+        (keydown.enter)="openOpticalDemo()"
+        (keydown.space)="openOpticalDemo()"
+      >
+        {{ language.text('services.opticalInventory') }}
+      </li>
       <li>{{ language.text('services.cryptoMarket') }}</li>
       <li>{{ language.text('services.inventorySystem') }}</li>
       <li>{{ language.text('services.telemetry') }}</li>
@@ -19,4 +29,18 @@
       <li>{{ language.text('services.electricalConsumption') }}</li>
     </ul>
   </div>
+
+  @if (isVideoModalOpen) {
+    <div class="video-modal" (click)="closeOpticalDemo()">
+      <div class="video-modal__content" (click)="$event.stopPropagation()">
+        <button type="button" class="video-modal__close" aria-label="Close video" (click)="closeOpticalDemo()">
+          ×
+        </button>
+        <video controls autoplay playsinline preload="metadata" class="video-modal__video">
+          <source [src]="opticalDemoVideo" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  }
 </section>
