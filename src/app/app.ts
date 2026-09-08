@@ -115,12 +115,12 @@ export class App {
   private getMetadata(path: string, spanish: boolean): { title: string; description: string } {
     const metadata: Record<string, { en: { title: string; description: string }; es: { title: string; description: string } }> = {
       '/home': {
-        en: { title: 'RHP Solutions | Practical business software and automation', description: 'RHP Solutions builds practical software, automation, and clear workflows for growing small businesses.' },
-        es: { title: 'RHP Solutions | Software y automatización para empresas', description: 'RHP Solutions crea software práctico, automatización y procesos claros para pequeñas empresas en crecimiento.' },
+        en: { title: 'RHP Solutions | Custom software and automation', description: 'RHP Solutions builds custom software, tailored solutions, hosted solutions, cloud data uploads, automation, integration, and clear workflows for growing small businesses.' },
+        es: { title: 'RHP Solutions | Software personalizado y automatización', description: 'RHP Solutions desarrolla software personalizado, programas a la medida, soluciones alojadas, carga de datos a la nube, automatización, integración y procesos claros para empresas en crecimiento.' },
       },
       '/about': {
         en: { title: 'About RHP Solutions | Practical technology partner', description: 'Learn how RHP Solutions helps growing businesses improve operations with practical technology.' },
-        es: { title: 'Sobre RHP Solutions | Tecnología práctica para empresas', description: 'Conoce cómo RHP Solutions ayuda a las empresas en crecimiento a mejorar sus operaciones con tecnología práctica.' },
+        es: { title: 'Sobre RHP Solutions | Software a medida y tecnología práctica', description: 'Conoce cómo RHP Solutions ayuda a empresas y negocios en crecimiento con software a medida, programas personalizados, carga de datos a la nube, automatización e integración.' },
       },
       '/solutions': {
         en: { title: 'Business Software Solutions | RHP Solutions', description: 'A practical roadmap from business problems to connected systems, automation, and better reporting.' },
