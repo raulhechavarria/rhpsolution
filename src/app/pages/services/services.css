@@ -90,6 +90,11 @@
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.service-item--link a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .service-item--video:hover,
 .service-item--video:focus-visible {
   border-color: rgba(103, 232, 249, 0.5);
